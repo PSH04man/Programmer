@@ -8,12 +8,13 @@ public class QuotientMultiplier {
         1,000을 곱한 후 정수 부분을 return 하도록 solution 함수를 완성해주세요.
          */
 
+        // 1. int 키워드 완벽히 제거
         System.out.println(solution(3, 2));
     }
 
-    static int solution(int num1, int num2) {
-        float result = (float) num1 / num2;
-
+    // 2. main에서 부를 수 있도록 static 키워드 추가
+    public static int solution(int num1, int num2) {
+        double result = (double) num1 / num2;
         int answer = (int) (result * 1000);
 
         return answer;
