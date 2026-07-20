@@ -1,5 +1,3 @@
-package main.java.kopo.programmers.Level_0;
-
 public class BirthYearCalculator {
     public static void main(String[] args) {
         /*
