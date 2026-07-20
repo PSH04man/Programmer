@@ -1,5 +1,3 @@
-package main.java.kopo.programmers.Level_0;
-
 import java.util.Arrays;
 
 public class MedianFinder {
