@@ -7,7 +7,7 @@
 
 | 언어 | 경로 | 비고 |
 |------|------|------|
-| Java | `src/main/java/kopo/programmers/` | 메인 풀이 언어 |
+| Java | `java/` | 메인 풀이 언어 |
 | C | `c/` | 동일 문제 다국어 풀이 |
 | Python | `python/` | 동일 문제 다국어 풀이 |
 
