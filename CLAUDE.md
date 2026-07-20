@@ -22,9 +22,13 @@ python/Level_0/*.py      ← Python 풀이
 - 인코딩 **UTF-8**, 줄바꿈 CRLF (Windows).
 - 컴파일·실행 확인:
   ```bash
-  javac -encoding UTF-8 -d /tmp/out java/Level_0/*.java
-  java -cp /tmp/out reverseString
+  javac -encoding UTF-8 -d out/manual java/Level_0/*.java
+  java -Dstdout.encoding=UTF-8 -cp out/manual reverseString
   ```
+  `-Dstdout.encoding=UTF-8`이 없으면 **터미널 출력의 한글이 깨진다**.
+  Java 18부터 콘솔 출력 인코딩이 `file.encoding`에서 분리됐고, 한국어 Windows의
+  기본 콘솔은 cp949라서 그렇다. 소스 파일 자체는 UTF-8로 정상이며 IntelliJ 실행에는
+  영향 없다 — 터미널로 직접 돌릴 때만 필요하다.
 
 ## IntelliJ 설정 (PC마다 각자)
 
