@@ -41,3 +41,34 @@ __pycache__/
 
 ### Mac OS ###
 .DS_Store
+
+### 개인 파일 차단 (PUBLIC 저장소 — CLAUDE.md 최우선 규칙) ###
+# 코드(.java/.c/.py)와 저장소 문서 외에는 올리지 않는다.
+*.txt
+*.log
+*.csv
+*.hwp
+*.hwpx
+*.docx
+*.xlsx
+*.pdf
+# 비밀정보
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.keystore
+secrets*
+credentials*
+application.properties
+# 개인 메모 (한글/영문 관용 이름)
+메모*
+일기*
+개인*
+비밀*
+notes/
+memo/
+private/
+personal/
+scratch/
