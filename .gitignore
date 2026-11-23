@@ -43,7 +43,7 @@ __pycache__/
 .DS_Store
 
 ### 개인 파일 차단 (PUBLIC 저장소 — CLAUDE.md 최우선 규칙) ###
-# 코드(.java/.c/.py)와 저장소 문서 외에는 올리지 않는다.
+# 코드(.java)와 저장소 문서 외에는 올리지 않는다.
 *.txt
 *.log
 *.csv

@@ -20,11 +20,9 @@ while IFS= read -r f; do
     [ -z "$f" ] && continue
     case "$f" in
         # ---- 허용: 풀이 코드 ----
-        java/*.java|c/*.c|python/*.py) ;;
+        level_0/*.java) ;;
         # ---- 허용: 저장소 문서·설정 ----
         README.md|CLAUDE.md|.gitignore|.githooks/*) ;;
-        .vscode/tasks.json|.vscode/settings.json) ;;
-        c/.vscode/tasks.json|c/.vscode/launch.json) ;;
         # ---- 그 외 전부 차단 ----
         *) blocked="$blocked  $f
 " ;;

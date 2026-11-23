@@ -18,7 +18,7 @@ git diff --cached --name-only     # 실제로 올라가는 목록
 ```
 
 - **`git add -A` / `git add .` 를 목록 확인 없이 실행하지 않는다.**
-- `.java`/`.c`/`.py`가 아닌 파일이 스테이징에 보이면 **멈추고 사용자에게 먼저 확인받는다.**
+- `.java`가 아닌 파일이 스테이징에 보이면 **멈추고 사용자에게 먼저 확인받는다.**
 - 개인 메모가 필요하면 이 폴더가 아니라 옵시디언 볼트에 쓴다.
 
 ### ⚠️ 유출 시 대응 — 파일 삭제는 효과가 없다
@@ -39,26 +39,25 @@ git diff --cached --name-only     # 실제로 올라가는 목록
 
 > 재발 방지책은 사후 대응이 아니라 **위 커밋 전 확인**뿐이다.
 
-## 저장소 구조 (2026-07-20 확정)
+## 저장소 구조 (2026-11-23 변경)
 
 ```
-java/Level_0/*.java      ← Java 풀이 (메인)
-c/Level_0/*.c            ← C 풀이
-python/Level_0/*.py      ← Python 풀이
+level_0/*.java      ← Java 풀이 (Java만 둔다)
 ```
 
-**언어별 최상위 폴더** 구조다. 옛 경로 `src/main/java/kopo/programmers/`는
-폐기됐으며 빈 `src/` 폴더가 남아 있으면 지워도 된다.
+**단계별 최상위 폴더** 구조다. C·Python은 IntelliJ에서 실행되지 않아 2026-11-23에 삭제했다.
+옛 경로 `java/Level_0/`, `src/main/java/kopo/programmers/`는 폐기됐으며,
+빈 폴더가 남아 있으면 지워도 된다.
 
 ## Java 파일 규칙 ⚠️
 
 - **`package` 선언을 쓰지 않는다** (default package).
-  `java/Level_0/`은 소스 루트이지 패키지 경로가 아니다.
+  `level_0/`은 소스 루트이지 패키지 경로가 아니다.
   `package main.java.kopo.programmers.Level_0;` 같은 선언이 보이면 **잔재이므로 제거**.
 - 인코딩 **UTF-8**, 줄바꿈 CRLF (Windows).
 - 컴파일·실행 확인:
   ```bash
-  javac -encoding UTF-8 -d out/manual java/Level_0/*.java
+  javac -encoding UTF-8 -d out/manual level_0/*.java
   java -Dstdout.encoding=UTF-8 -cp out/manual reverseString
   ```
   `-Dstdout.encoding=UTF-8`이 없으면 **터미널 출력의 한글이 깨진다**.
@@ -71,7 +70,7 @@ python/Level_0/*.py      ← Python 풀이
 `*.iml`과 `.idea/`는 **gitignore 대상**이다. PC마다 경로가 달라 충돌의 원인이었다.
 새 PC에서 처음 열 때 한 번만:
 
-> `java` 폴더 우클릭 → **Mark Directory as → Sources Root**
+> `level_0` 폴더 우클릭 → **Mark Directory as → Sources Root**
 
 ## Git 워크플로 (중요 — 사고 재발 방지)
 
