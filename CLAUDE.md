@@ -42,7 +42,7 @@ git diff --cached --name-only     # 실제로 올라가는 목록
 ## 저장소 구조 (2026-11-23 변경)
 
 ```
-level_0/*.java      ← Java 풀이 (Java만 둔다)
+level_N/*.java      ← Java 풀이 (level_0, level_1 …, Java만 둔다)
 ```
 
 **단계별 최상위 폴더** 구조다. C·Python은 IntelliJ에서 실행되지 않아 2026-11-23에 삭제했다.
@@ -81,6 +81,8 @@ level_0/*.java      ← Java 풀이 (Java만 둔다)
 
 - `pull.rebase true` 설정됨 → 병합 커밋이 안 생기고 히스토리가 일자로 유지된다.
   **새 PC에서는 `git config pull.rebase true`를 먼저 실행할 것.**
+- 커밋 메시지는 백준허브 형식(`[level 0] Title: 문제이름, Time: …, Memory: …`)을 따른다.
+  새 PC에서 `git config commit.template .gitmessage` 를 한 번 실행하면 IntelliJ 커밋 창에 양식이 채워진다.
 - 문제 하나 풀면 바로 커밋·push. 쌓아두면 양쪽이 갈라진다.
 
 ### 과거 사고 이력 (2026-07-20)
