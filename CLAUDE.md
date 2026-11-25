@@ -42,8 +42,18 @@ git diff --cached --name-only     # 실제로 올라가는 목록
 ## 저장소 구조 (2026-11-23 변경)
 
 ```
-level_N/*.java      ← Java 풀이 (level_0, level_1 …, Java만 둔다)
+level_N/*.java           ← IntelliJ 연습 풀이 (main으로 실행, level_0, level_1 …)
+kbigdata_350/Java/*.java ← kbigdata 350제 풀이
+프로그래머스/            ← 백준허브가 자동으로 올리는 제출 정답 (손으로 고치지 않는다)
 ```
+
+### 역할 나누기 (2026-11-25)
+- **연습**은 IntelliJ의 `level_N/`에서 `main`으로 돌려 본다. 클래스 이름은 자유.
+- **제출**은 Aside 브라우저(백준허브 설치됨)에서 프로그래머스에 낸다.
+  정답이면 `프로그래머스/`에 시간·메모리까지 자동 커밋되므로, 같은 문제를 `level_N/`에 또 커밋하지 않아도 된다.
+- 연습 파일을 제출할 때는 **`solution` 메서드만** 프로그래머스의 `class Solution` 안에 붙여 넣는다.
+  그래서 연습 파일도 `main` + `static ... solution(...)` 형태로 나눠 쓴다.
+- 백준허브가 GitHub에 직접 올리므로, **작업 전 `git pull`은 필수**다.
 
 **단계별 최상위 폴더** 구조다. C·Python은 IntelliJ에서 실행되지 않아 2026-11-23에 삭제했다.
 옛 경로 `java/Level_0/`, `src/main/java/kopo/programmers/`는 폐기됐으며,
@@ -81,8 +91,10 @@ level_N/*.java      ← Java 풀이 (level_0, level_1 …, Java만 둔다)
 
 - `pull.rebase true` 설정됨 → 병합 커밋이 안 생기고 히스토리가 일자로 유지된다.
   **새 PC에서는 `git config pull.rebase true`를 먼저 실행할 것.**
-- 커밋 메시지는 백준허브 형식(`[level 0] Title: 문제이름, Time: …, Memory: …`)을 따른다.
+- 커밋 메시지는 백준허브 형식(`[level N] Title: 문제이름, Time: …, Memory: …`)을 따른다.
   새 PC에서 `git config commit.template .gitmessage` 를 한 번 실행하면 IntelliJ 커밋 창에 양식이 채워진다.
+  `git commit -m` 으로 쓰면 양식이 뜨지 않으니 직접 형식을 맞춘다.
+- 새 PC에서 `git config core.hooksPath .githooks` 도 한 번 실행 (개인 파일 차단 훅).
 - 문제 하나 풀면 바로 커밋·push. 쌓아두면 양쪽이 갈라진다.
 
 ### 과거 사고 이력 (2026-07-20)

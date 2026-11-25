@@ -20,7 +20,9 @@ while IFS= read -r f; do
     [ -z "$f" ] && continue
     case "$f" in
         # ---- 허용: 풀이 코드 ----
-        level_*/*.java) ;;
+        level_*/*.java|kbigdata_*/*.java) ;;
+        # ---- 허용: 백준허브 자동 업로드 폴더 ----
+        프로그래머스/*) ;;
         # ---- 허용: 저장소 문서·설정 ----
         README.md|CLAUDE.md|.gitignore|.gitmessage|.githooks/*) ;;
         # ---- 그 외 전부 차단 ----
