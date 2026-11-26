@@ -1,9 +1,9 @@
-import java.util.*
+import java.util.*;
 public class Main007{
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        int a = nextInt();
-        int b = nextInt();
+        int a = sc.nextInt();
+        int b = sc.nextInt();
 
         System.out.print(a + "\n" + b);
         sc.close();

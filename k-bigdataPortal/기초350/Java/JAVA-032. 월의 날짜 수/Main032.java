@@ -2,11 +2,11 @@ import java.util.*;
 
 public class Main032{
     public static void main(String[] args){
-        Scanner sc = new Scanenr(System.in);
-        int x = nextInt();
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
 
         if ( x == 2){
-            Sysyem.out.print("28");
+            System.out.print("28");
         }
         else if ( x <= 7 ){
             if (x % 2 == 0){
